@@ -1,0 +1,1027 @@
+{
+  "meta": {
+    "title": "Dữ liệu sáp nhập đơn vị hành chính cấp tỉnh Việt Nam 2025",
+    "description": "Tổng hợp thông tin trước và sau sáp nhập 63 tỉnh/thành phố thành 34 đơn vị hành chính cấp tỉnh theo Nghị quyết 202/2025/QH15",
+    "version": "1.0.0",
+    "snapshot_date": "2026-04-04",
+    "legal_basis": {
+      "primary": "Nghị quyết số 202/2025/QH15 ngày 12/06/2025 của Quốc hội về sắp xếp đơn vị hành chính cấp tỉnh",
+      "supporting": [
+        "Nghị quyết số 60-NQ/TW ngày 12/04/2025 Hội nghị lần thứ 11 Ban Chấp hành Trung ương Đảng khóa XIII",
+        "Kết luận số 127-KL/TW ngày 28/02/2025 của Bộ Chính trị, Ban Bí thư",
+        "Luật Tổ chức chính quyền địa phương số 72/2025/QH15",
+        "Nghị quyết số 76/2025/UBTVQH15 ngày 14/04/2025 của UBTVQH về sắp xếp đơn vị hành chính năm 2025",
+        "Nghị định 178/2024/NĐ-CP về chính sách với CBCCVC khi sắp xếp bộ máy",
+        "Nghị định 24/2025/NĐ-CP ngày 31/03/2025 về Trung tâm Hành chính công cấp xã",
+        "Hướng dẫn 31/2025-HD/BTCTW ngày 25/04/2025 của Ban Tổ chức Trung ương",
+        "34 Nghị quyết của UBTVQH về sắp xếp đơn vị hành chính cấp xã tại 34 tỉnh thành"
+      ]
+    },
+    "government_model": "Chính quyền địa phương 2 cấp (cấp tỉnh và cấp xã/phường) – không còn cấp huyện",
+    "sources": [
+      {
+        "name": "Tổng cục Thống kê (GSO)",
+        "url": "https://danhmuchanhchinh.gso.gov.vn",
+        "description": "Danh mục hành chính Việt Nam – Cơ sở dữ liệu chính thức về mã đơn vị hành chính các cấp"
+      },
+      {
+        "name": "Cổng dữ liệu quốc gia",
+        "url": "https://data.gov.vn",
+        "description": "Cổng dữ liệu mở quốc gia – Danh mục dữ liệu dùng chung về đơn vị hành chính"
+      },
+      {
+        "name": "Tổng cục Thống kê – Trang chủ",
+        "url": "https://www.gso.gov.vn",
+        "description": "Cổng thông tin điện tử Tổng cục Thống kê – Dữ liệu đơn vị hành chính, đất đai và khí hậu"
+      },
+      {
+        "name": "Báo Điện tử Chính phủ – Xây dựng chính sách",
+        "url": "https://xaydungchinhsach.chinhphu.vn",
+        "description": "Toàn văn Nghị quyết 202/2025/QH15 và chi tiết 34 đơn vị hành chính cấp tỉnh"
+      },
+      {
+        "name": "Hệ thống bản đồ hành chính Việt Nam",
+        "url": "https://vnsdi.monre.gov.vn/home",
+        "description": "Bản đồ hành chính Việt Nam cập nhật 34 đơn vị cấp tỉnh do Cục Đo đạc, Bản đồ và Thông tin địa lý Việt Nam cung cấp"
+      }
+    ]
+  },
+  "summary": {
+    "before_merger": {
+      "total_provinces": 63,
+      "provinces": 58,
+      "cities": 5
+    },
+    "after_merger": {
+      "total_provinces": 34,
+      "provinces": 28,
+      "cities": 6,
+      "total_communes": 3321
+    },
+    "resolution_date": "2025-06-12",
+    "effective_operation_date": "2025-07-01",
+    "approval_rate": "96.44% (461/465 đại biểu Quốc hội tán thành)",
+    "public_consensus_rate": "96.19%",
+    "estimated_savings": {
+      "personnel_reduction": "250.000 người (130.000 CBCCVC + 120.000 người hoạt động không chuyên trách cấp xã)",
+      "budget_savings": "190.000 tỷ đồng (giai đoạn 2026–2030)"
+    }
+  },
+  "merged_units": [
+    {
+      "id": 1,
+      "new_name": "Tỉnh Tuyên Quang",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Hà Giang", "type": "Tỉnh" },
+        { "name": "Tỉnh Tuyên Quang", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 13795.50,
+      "population": 1865270,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết 1684/NQ-UBTVQH15 ngày 16/06/2025",
+      "communes_after": 124,
+      "communes_detail": "117 xã, 7 phường",
+      "region": "Trung du và miền núi phía Bắc",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD (địa chỉ thường trú)",
+        "Cập nhật sổ hộ khẩu, xác nhận cư trú",
+        "Đổi giấy phép lái xe (nơi cấp)",
+        "Đổi giấy chứng nhận đăng ký kinh doanh",
+        "Đổi giấy chứng nhận quyền sử dụng đất (sổ đỏ/sổ hồng)",
+        "Chuyển đổi mã số thuế doanh nghiệp/cá nhân",
+        "Cập nhật giấy tờ bảo hiểm xã hội, bảo hiểm y tế",
+        "Đăng ký biển số xe mới",
+        "Thủ tục hộ tịch (khai sinh, khai tử, đăng ký kết hôn)",
+        "Cập nhật địa chỉ trên các hợp đồng, chứng từ pháp lý",
+        "Thủ tục chuyển trường cho học sinh, sinh viên",
+        "Cập nhật thông tin ngân hàng, tài khoản tài chính"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-202-2025-qh15-ve-sap-xep-don-vi-hanh-chinh-cap-tinh-119250612174148722.htm",
+        "https://danhmuchanhchinh.gso.gov.vn",
+        "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1684-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-tuyen-quang-nam-2025-119250616211706973.htm"
+      ]
+    },
+    {
+      "id": 2,
+      "new_name": "Tỉnh Lào Cai",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Yên Bái", "type": "Tỉnh" },
+        { "name": "Tỉnh Lào Cai", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 13256.92,
+      "population": 1778785,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Lào Cai năm 2025",
+      "region": "Trung du và miền núi phía Bắc",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật sổ hộ khẩu, xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi giấy chứng nhận đăng ký kinh doanh",
+        "Đổi giấy chứng nhận quyền sử dụng đất",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật bảo hiểm xã hội, bảo hiểm y tế",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch",
+        "Cập nhật địa chỉ hợp đồng, chứng từ pháp lý"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 3,
+      "new_name": "Tỉnh Thái Nguyên",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bắc Kạn", "type": "Tỉnh" },
+        { "name": "Tỉnh Thái Nguyên", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 8375.21,
+      "population": 1799489,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Thái Nguyên năm 2025",
+      "region": "Trung du và miền núi phía Bắc",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch",
+        "Cập nhật hợp đồng, chứng từ pháp lý"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 4,
+      "new_name": "Tỉnh Phú Thọ",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Vĩnh Phúc", "type": "Tỉnh" },
+        { "name": "Tỉnh Hòa Bình", "type": "Tỉnh" },
+        { "name": "Tỉnh Phú Thọ", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 9361.38,
+      "population": 4022638,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Phú Thọ năm 2025",
+      "region": "Trung du và miền núi phía Bắc / Đồng bằng sông Hồng",
+      "note": "Sáp nhập 3 tỉnh thành 1 – trường hợp đặc biệt",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch",
+        "Cập nhật hợp đồng, chứng từ pháp lý"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 5,
+      "new_name": "Tỉnh Bắc Ninh",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bắc Giang", "type": "Tỉnh" },
+        { "name": "Tỉnh Bắc Ninh", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 4718.60,
+      "population": 3619433,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Bắc Ninh năm 2025",
+      "region": "Đồng bằng sông Hồng",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 6,
+      "new_name": "Tỉnh Hưng Yên",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Thái Bình", "type": "Tỉnh" },
+        { "name": "Tỉnh Hưng Yên", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 2514.81,
+      "population": 3567943,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Hưng Yên năm 2025",
+      "region": "Đồng bằng sông Hồng",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 7,
+      "new_name": "Thành phố Hải Phòng",
+      "new_type": "Thành phố trực thuộc Trung ương",
+      "old_units": [
+        { "name": "Thành phố Hải Phòng", "type": "Thành phố trực thuộc Trung ương" },
+        { "name": "Tỉnh Hải Dương", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 3194.72,
+      "population": 4664124,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã thành phố Hải Phòng năm 2025",
+      "region": "Đồng bằng sông Hồng",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 8,
+      "new_name": "Tỉnh Ninh Bình",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Hà Nam", "type": "Tỉnh" },
+        { "name": "Tỉnh Nam Định", "type": "Tỉnh" },
+        { "name": "Tỉnh Ninh Bình", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 3942.62,
+      "population": 4412264,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Ninh Bình năm 2025",
+      "region": "Đồng bằng sông Hồng",
+      "note": "Sáp nhập 3 tỉnh thành 1 – trường hợp đặc biệt",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 9,
+      "new_name": "Tỉnh Quảng Trị",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Quảng Bình", "type": "Tỉnh" },
+        { "name": "Tỉnh Quảng Trị", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 12700.00,
+      "population": 1870845,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Quảng Trị năm 2025",
+      "region": "Bắc Trung Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 10,
+      "new_name": "Thành phố Đà Nẵng",
+      "new_type": "Thành phố trực thuộc Trung ương",
+      "old_units": [
+        { "name": "Thành phố Đà Nẵng", "type": "Thành phố trực thuộc Trung ương" },
+        { "name": "Tỉnh Quảng Nam", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 11859.59,
+      "population": 3065628,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã thành phố Đà Nẵng năm 2025",
+      "region": "Nam Trung Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 11,
+      "new_name": "Tỉnh Quảng Ngãi",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Kon Tum", "type": "Tỉnh" },
+        { "name": "Tỉnh Quảng Ngãi", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 14832.55,
+      "population": 2161755,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Quảng Ngãi năm 2025",
+      "region": "Nam Trung Bộ / Tây Nguyên",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 12,
+      "new_name": "Tỉnh Gia Lai",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bình Định", "type": "Tỉnh" },
+        { "name": "Tỉnh Gia Lai", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 21576.53,
+      "population": 3583693,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Gia Lai năm 2025",
+      "region": "Tây Nguyên / Nam Trung Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 13,
+      "new_name": "Tỉnh Khánh Hòa",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Ninh Thuận", "type": "Tỉnh" },
+        { "name": "Tỉnh Khánh Hòa", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 8555.86,
+      "population": 2243554,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Khánh Hòa năm 2025",
+      "region": "Nam Trung Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 14,
+      "new_name": "Tỉnh Lâm Đồng",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Đắk Nông", "type": "Tỉnh" },
+        { "name": "Tỉnh Bình Thuận", "type": "Tỉnh" },
+        { "name": "Tỉnh Lâm Đồng", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 24233.07,
+      "population": 3872999,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Lâm Đồng năm 2025",
+      "region": "Tây Nguyên / Nam Trung Bộ",
+      "note": "Sáp nhập 3 tỉnh thành 1 – diện tích lớn nhất cả nước sau sáp nhập",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 15,
+      "new_name": "Tỉnh Đắk Lắk",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Phú Yên", "type": "Tỉnh" },
+        { "name": "Tỉnh Đắk Lắk", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 18096.40,
+      "population": 3346853,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Đắk Lắk năm 2025",
+      "region": "Tây Nguyên / Nam Trung Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 16,
+      "new_name": "Thành phố Hồ Chí Minh",
+      "new_type": "Thành phố trực thuộc Trung ương",
+      "old_units": [
+        { "name": "Thành phố Hồ Chí Minh", "type": "Thành phố trực thuộc Trung ương" },
+        { "name": "Tỉnh Bà Rịa - Vũng Tàu", "type": "Tỉnh" },
+        { "name": "Tỉnh Bình Dương", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 6772.59,
+      "population": 14002598,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết 1685/NQ-UBTVQH15 về sắp xếp ĐVHC cấp xã TP Hồ Chí Minh năm 2025",
+      "region": "Đông Nam Bộ",
+      "note": "Sáp nhập 3 đơn vị – dân số lớn nhất cả nước sau sáp nhập",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch",
+        "Cập nhật hợp đồng, chứng từ pháp lý"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 17,
+      "new_name": "Tỉnh Đồng Nai",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bình Phước", "type": "Tỉnh" },
+        { "name": "Tỉnh Đồng Nai", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 12737.18,
+      "population": 4491408,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Đồng Nai năm 2025",
+      "region": "Đông Nam Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 18,
+      "new_name": "Tỉnh Tây Ninh",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Long An", "type": "Tỉnh" },
+        { "name": "Tỉnh Tây Ninh", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 8536.44,
+      "population": 3254170,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Tây Ninh năm 2025",
+      "region": "Đông Nam Bộ",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 19,
+      "new_name": "Thành phố Cần Thơ",
+      "new_type": "Thành phố trực thuộc Trung ương",
+      "old_units": [
+        { "name": "Thành phố Cần Thơ", "type": "Thành phố trực thuộc Trung ương" },
+        { "name": "Tỉnh Sóc Trăng", "type": "Tỉnh" },
+        { "name": "Tỉnh Hậu Giang", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 6360.83,
+      "population": 4199824,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã thành phố Cần Thơ năm 2025",
+      "region": "Đồng bằng sông Cửu Long",
+      "note": "Sáp nhập 3 đơn vị thành 1",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 20,
+      "new_name": "Tỉnh Vĩnh Long",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bến Tre", "type": "Tỉnh" },
+        { "name": "Tỉnh Trà Vinh", "type": "Tỉnh" },
+        { "name": "Tỉnh Vĩnh Long", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 6296.20,
+      "population": 4257581,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Vĩnh Long năm 2025",
+      "region": "Đồng bằng sông Cửu Long",
+      "note": "Sáp nhập 3 tỉnh thành 1",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 21,
+      "new_name": "Tỉnh Đồng Tháp",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Tiền Giang", "type": "Tỉnh" },
+        { "name": "Tỉnh Đồng Tháp", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 5938.64,
+      "population": 4370046,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Đồng Tháp năm 2025",
+      "region": "Đồng bằng sông Cửu Long",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 22,
+      "new_name": "Tỉnh Cà Mau",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Bạc Liêu", "type": "Tỉnh" },
+        { "name": "Tỉnh Cà Mau", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 7942.39,
+      "population": 2606672,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh Cà Mau năm 2025",
+      "region": "Đồng bằng sông Cửu Long",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    },
+    {
+      "id": 23,
+      "new_name": "Tỉnh An Giang",
+      "new_type": "Tỉnh",
+      "old_units": [
+        { "name": "Tỉnh Kiên Giang", "type": "Tỉnh" },
+        { "name": "Tỉnh An Giang", "type": "Tỉnh" }
+      ],
+      "effective_date": "2025-06-12",
+      "operation_date": "2025-07-01",
+      "area_km2": 9888.91,
+      "population": 4952238,
+      "resolution": "Nghị quyết 202/2025/QH15",
+      "sub_unit_resolution": "Nghị quyết UBTVQH15 về sắp xếp ĐVHC cấp xã tỉnh An Giang năm 2025",
+      "region": "Đồng bằng sông Cửu Long",
+      "affected_procedures": [
+        "Đổi căn cước công dân/thẻ CCCD",
+        "Cập nhật xác nhận cư trú",
+        "Đổi giấy phép lái xe",
+        "Đổi đăng ký kinh doanh",
+        "Đổi giấy chứng nhận QSDĐ",
+        "Chuyển đổi mã số thuế",
+        "Cập nhật BHXH, BHYT",
+        "Đăng ký biển số xe",
+        "Thủ tục hộ tịch"
+      ],
+      "source_urls": [
+        "https://xaydungchinhsach.chinhphu.vn/chi-tiet-34-don-vi-hanh-chinh-cap-tinh-tu-12-6-2025-119250612141845533.htm",
+        "https://danhmuchanhchinh.gso.gov.vn"
+      ]
+    }
+  ],
+  "unchanged_units": [
+    {
+      "name": "Thành phố Hà Nội",
+      "type": "Thành phố trực thuộc Trung ương",
+      "status": "Không thực hiện sắp xếp cấp tỉnh",
+      "note": "Vẫn thực hiện sắp xếp đơn vị hành chính cấp xã theo Nghị quyết UBTVQH"
+    },
+    {
+      "name": "Thành phố Huế",
+      "type": "Thành phố trực thuộc Trung ương",
+      "status": "Không thực hiện sắp xếp cấp tỉnh",
+      "note": "Đã sắp xếp cấp huyện/xã giai đoạn 2023–2025 trước đó"
+    },
+    {
+      "name": "Tỉnh Cao Bằng",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Điện Biên",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Hà Tĩnh",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Lai Châu",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Lạng Sơn",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Nghệ An",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Quảng Ninh",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Thanh Hóa",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    },
+    {
+      "name": "Tỉnh Sơn La",
+      "type": "Tỉnh",
+      "status": "Không thực hiện sắp xếp cấp tỉnh"
+    }
+  ],
+  "lookup_old_to_new": {
+    "Hà Giang": "Tuyên Quang",
+    "Tuyên Quang": "Tuyên Quang",
+    "Yên Bái": "Lào Cai",
+    "Lào Cai": "Lào Cai",
+    "Bắc Kạn": "Thái Nguyên",
+    "Thái Nguyên": "Thái Nguyên",
+    "Vĩnh Phúc": "Phú Thọ",
+    "Hòa Bình": "Phú Thọ",
+    "Phú Thọ": "Phú Thọ",
+    "Bắc Giang": "Bắc Ninh",
+    "Bắc Ninh": "Bắc Ninh",
+    "Thái Bình": "Hưng Yên",
+    "Hưng Yên": "Hưng Yên",
+    "Hải Phòng": "Hải Phòng",
+    "Hải Dương": "Hải Phòng",
+    "Hà Nam": "Ninh Bình",
+    "Nam Định": "Ninh Bình",
+    "Ninh Bình": "Ninh Bình",
+    "Quảng Bình": "Quảng Trị",
+    "Quảng Trị": "Quảng Trị",
+    "Đà Nẵng": "Đà Nẵng",
+    "Quảng Nam": "Đà Nẵng",
+    "Kon Tum": "Quảng Ngãi",
+    "Quảng Ngãi": "Quảng Ngãi",
+    "Bình Định": "Gia Lai",
+    "Gia Lai": "Gia Lai",
+    "Ninh Thuận": "Khánh Hòa",
+    "Khánh Hòa": "Khánh Hòa",
+    "Đắk Nông": "Lâm Đồng",
+    "Bình Thuận": "Lâm Đồng",
+    "Lâm Đồng": "Lâm Đồng",
+    "Phú Yên": "Đắk Lắk",
+    "Đắk Lắk": "Đắk Lắk",
+    "Hồ Chí Minh": "Hồ Chí Minh",
+    "Bà Rịa - Vũng Tàu": "Hồ Chí Minh",
+    "Bình Dương": "Hồ Chí Minh",
+    "Bình Phước": "Đồng Nai",
+    "Đồng Nai": "Đồng Nai",
+    "Long An": "Tây Ninh",
+    "Tây Ninh": "Tây Ninh",
+    "Cần Thơ": "Cần Thơ",
+    "Sóc Trăng": "Cần Thơ",
+    "Hậu Giang": "Cần Thơ",
+    "Bến Tre": "Vĩnh Long",
+    "Trà Vinh": "Vĩnh Long",
+    "Vĩnh Long": "Vĩnh Long",
+    "Tiền Giang": "Đồng Tháp",
+    "Đồng Tháp": "Đồng Tháp",
+    "Bạc Liêu": "Cà Mau",
+    "Cà Mau": "Cà Mau",
+    "Kiên Giang": "An Giang",
+    "An Giang": "An Giang",
+    "Hà Nội": "Hà Nội",
+    "Huế": "Huế",
+    "Cao Bằng": "Cao Bằng",
+    "Điện Biên": "Điện Biên",
+    "Hà Tĩnh": "Hà Tĩnh",
+    "Lai Châu": "Lai Châu",
+    "Lạng Sơn": "Lạng Sơn",
+    "Nghệ An": "Nghệ An",
+    "Quảng Ninh": "Quảng Ninh",
+    "Thanh Hóa": "Thanh Hóa",
+    "Sơn La": "Sơn La"
+  },
+  "common_affected_procedures_detail": {
+    "description": "Danh sách các thủ tục hành chính bị ảnh hưởng hoặc có thể bị ảnh hưởng khi sáp nhập đơn vị hành chính cấp tỉnh. Áp dụng chung cho tất cả các đơn vị sáp nhập.",
+    "categories": [
+      {
+        "category": "Giấy tờ tùy thân",
+        "procedures": [
+          "Đổi/cập nhật căn cước công dân (CCCD) do thay đổi địa chỉ thường trú",
+          "Cập nhật thông tin cư trú trong Cơ sở dữ liệu quốc gia về dân cư"
+        ],
+        "legal_basis": "Luật Căn cước 2023; Nghị định 178/2024/NĐ-CP"
+      },
+      {
+        "category": "Đăng ký kinh doanh",
+        "procedures": [
+          "Thay đổi nội dung đăng ký doanh nghiệp (địa chỉ trụ sở)",
+          "Cập nhật mã số thuế doanh nghiệp",
+          "Đổi giấy phép kinh doanh ngành nghề có điều kiện"
+        ],
+        "legal_basis": "Luật Doanh nghiệp 2020; Nghị định 01/2021/NĐ-CP"
+      },
+      {
+        "category": "Đất đai – Nhà ở",
+        "procedures": [
+          "Cập nhật giấy chứng nhận quyền sử dụng đất (sổ đỏ/sổ hồng)",
+          "Thay đổi thông tin địa chỉ trên hợp đồng thuê đất",
+          "Chuyển đổi cơ quan quản lý đất đai"
+        ],
+        "legal_basis": "Luật Đất đai 2024"
+      },
+      {
+        "category": "Giao thông – Phương tiện",
+        "procedures": [
+          "Đổi biển số xe theo mã tỉnh mới (nếu có thay đổi)",
+          "Cập nhật giấy đăng ký xe",
+          "Đổi giấy phép lái xe (nơi cấp)"
+        ],
+        "legal_basis": "Luật Trật tự, an toàn giao thông đường bộ 2024"
+      },
+      {
+        "category": "Bảo hiểm – Lao động",
+        "procedures": [
+          "Cập nhật thông tin trên thẻ BHYT",
+          "Cập nhật sổ BHXH",
+          "Chuyển đổi cơ quan quản lý BHXH"
+        ],
+        "legal_basis": "Luật Bảo hiểm xã hội 2024; Luật Bảo hiểm y tế"
+      },
+      {
+        "category": "Hộ tịch",
+        "procedures": [
+          "Đăng ký khai sinh, khai tử, kết hôn tại đơn vị hành chính mới",
+          "Cập nhật địa chỉ trên giấy tờ hộ tịch"
+        ],
+        "legal_basis": "Luật Hộ tịch 2014"
+      },
+      {
+        "category": "Giáo dục",
+        "procedures": [
+          "Chuyển trường cho học sinh theo đơn vị hành chính mới",
+          "Cập nhật hồ sơ học sinh, sinh viên",
+          "Thay đổi khu vực tuyển sinh"
+        ],
+        "legal_basis": "Luật Giáo dục 2019"
+      },
+      {
+        "category": "Tài chính – Ngân hàng",
+        "procedures": [
+          "Cập nhật địa chỉ tài khoản ngân hàng",
+          "Cập nhật thông tin hợp đồng bảo hiểm, tín dụng",
+          "Kê khai thuế theo đơn vị hành chính mới"
+        ],
+        "legal_basis": "Luật Quản lý thuế 2019; Nghị định 68/2026/NĐ-CP"
+      }
+    ]
+  },
+  "data_api_references": {
+    "gso_administrative_api": {
+      "description": "API danh mục hành chính từ Tổng cục Thống kê (SOAP/REST)",
+      "url": "https://danhmuchanhchinh.gso.gov.vn",
+      "note": "API đang được cập nhật theo Quyết định 19/2025/QĐ-TTg. Dev nên kiểm tra phiên bản dữ liệu trước khi sử dụng.",
+      "alternative_datasets": [
+        "https://github.com/ThangLeQuoc/vietnamese-provinces-database (SQL dataset, cập nhật theo NQ 202/2025)",
+        "https://github.com/daohoangson/dvhcvn (JSON dataset)",
+        "https://github.com/dvhcvn/data (JSON dataset với lịch sử thay đổi)"
+      ]
+    },
+    "national_data_portal": {
+      "url": "https://data.gov.vn",
+      "description": "Cổng dữ liệu quốc gia – Danh mục cơ sở dữ liệu quốc gia theo QĐ 714/QĐ-TTg",
+      "note": "Dữ liệu danh mục hành chính trên data.gov.vn liên kết với GSO. Tham chiếu chéo với danhmuchanhchinh.gso.gov.vn để đảm bảo tính chính xác."
+    },
+    "map_service": {
+      "url": "https://vnsdi.monre.gov.vn/home",
+      "description": "Bản đồ hành chính Việt Nam trực tuyến tỷ lệ 1:1.000.000 do Cục Đo đạc, Bản đồ và Thông tin địa lý Việt Nam cung cấp"
+    }
+  }
+}
