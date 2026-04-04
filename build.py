@@ -93,6 +93,7 @@ for unit in data['merged_units']:
     
     page_html = page_html.replace('href="index.html"', 'href="../index.html"')
     page_html = page_html.replace("fetch('data.json')", "fetch('../data.json')")
+    page_html = page_html.replace('href="tinh/', 'href="../tinh/')
     
     with open(f'tinh/{slug}.html', 'w', encoding='utf-8') as f:
         f.write(page_html)
