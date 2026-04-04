@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Địa chính Việt Nam - Tra cứu sáp nhập địa giới hành chính</title>
+    <meta name="description" content="Công cụ tra cứu thay đổi địa danh, sáp nhập xã huyện tại Việt Nam.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 py-3">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 font-extrabold text-blue-700 text-xl tracking-tight">
+                <i data-lucide="map-pin" class="text-orange-500"></i>
+                <span>ĐỊA CHÍNH VIỆT NAM</span>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <header class="bg-white pt-16 pb-10 px-4 border-b border-slate-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
+                Tra cứu thay đổi <span class="text-blue-600">Địa chính & Hành chính</span>
+            </h1>
+            <p class="text-slate-500 mb-10 text-lg">Đơn giản, chính xác, cập nhật theo thông tin Chính phủ (Cập nhật
+                Tháng 4/2026).</p>
+
+            <div class="relative group max-w-2xl mx-auto">
+                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                    <i data-lucide="search" class="text-slate-400"></i>
+                </div>
+                <input type="text" id="searchInput"
+                    class="w-full bg-slate-100 border-2 border-transparent focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-2xl py-5 pl-14 pr-6 text-lg transition-all outline-none shadow-sm"
+                    placeholder="Nhập tên tỉnh/thành phố cũ hoặc mới (Vd: Lâm Đồng, Hà Nam)...">
+            </div>
+            <div
+                class="mt-4 flex flex-wrap justify-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                <span>Gợi ý:</span>
+                <button onclick="quickSearch('Lâm Đồng')" class="text-blue-600 hover:underline">Lâm Đồng</button>
+                <button onclick="quickSearch('Đắk Nông')" class="text-blue-600 hover:underline ml-2">Đắk Nông</button>
+                <button onclick="quickSearch('Hà Nội')" class="text-blue-600 hover:underline ml-2">Hà Nội</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12" id="mainContent">
+        <div id="defaultState" class="grid md:grid-cols-2 gap-8 items-center py-10">
+            <div class="space-y-6">
+                <div
+                    class="p-6 bg-white rounded-3xl shadow-sm border border-slate-200 flex gap-4 hover:shadow-md transition-all">
+                    <div class="bg-blue-100 p-3 rounded-2xl text-blue-600 shrink-0"><i data-lucide="info"></i></div>
+                    <div>
+                        <h4 class="font-bold">Dữ liệu chuẩn xác định</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">Cung cấp câu trả lời trực tiếp cho người dân
+                            (Hệ thống Audit Citizens).</p>
+                    </div>
+                </div>
+                <div
+                    class="p-6 bg-white rounded-3xl shadow-sm border border-slate-200 flex gap-4 hover:shadow-md transition-all">
+                    <div class="bg-orange-100 p-3 rounded-2xl text-orange-600 shrink-0"><i data-lucide="file-text"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Hướng dẫn thủ tục</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">Thông tin chi tiết giấy tờ hành chính cần thay
+                            đổi khi sáp nhập địa giới (CCCD, Sổ hộ khẩu, Sổ đỏ,...).</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-slate-200 aspect-video rounded-[2.5rem] flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-300 p-10 text-center">
+                <i data-lucide="map" class="mb-4 opacity-30 w-16 h-16"></i>
+                <p class="font-medium">Vui lòng nhập tên địa danh để tra cứu thông tin sáp nhập</p>
+                <p id="systemRoadmap" class="text-sm mt-2 text-red-400 hidden">Địa danh chưa có hoặc chờ ban hành quyết
+                    định (Cập nhật hệ thống vào Tháng 5/2026).</p>
+            </div>
+        </div>
+
+        <div id="resultArea" class="hidden space-y-8 animate-in fade-in duration-500">
+            <!-- AEO 2-Sentence Answers -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl">
+                <h3 class="font-bold text-blue-800 flex items-center gap-2 mb-2"><i data-lucide="zap"
+                        class="w-5 h-5"></i> Trạng thái & Tổng quan báo cáo</h3>
+                <p id="aeoOverview" class="text-slate-700 text-lg leading-relaxed"></p>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold mb-3"
+                        id="resStatusBadge">
+                        <i data-lucide="check-circle" class="w-3 h-3"></i> TÌNH TRẠNG: ĐÃ SÁP NHẬP
+                    </div>
+                    <h2 id="resTitle" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight"></h2>
+                    <p id="resSubtitle" class="text-slate-500 text-xl mt-2 font-medium"></p>
+                </div>
+                <div class="bg-orange-600 text-white rounded-3xl p-6 shadow-lg shadow-orange-100 min-w-[240px]">
+                    <p class="text-orange-200 text-xs font-bold uppercase tracking-widest mb-1">Ngày có hiệu lực</p>
+                    <p id="resDate" class="text-2xl font-black"></p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm overflow-x-auto">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-700">
+                    <i data-lucide="table" class="text-blue-500"></i> Bảng đối chiếu Thông số
+                </h3>
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100">
+                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Đặc điểm</th>
+                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Trước Sáp nhập (Cũ)</th>
+                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Sau Sáp nhập (Mới)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div
+                    class="md:col-span-2 bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm overflow-hidden">
+                    <h3 class="text-lg font-bold mb-8 flex items-center gap-2 text-slate-700">
+                        <i data-lucide="git-merge" class="text-blue-500"></i> Sơ đồ sáp nhập không gian
+                    </h3>
+                    <div class="flex flex-col items-center py-6">
+                        <div class="flex items-center justify-center gap-4 md:gap-10 w-full">
+                            <div id="resOldUnits" class="flex flex-col gap-3 flex-1">
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-2">
+                                    <i data-lucide="arrow-right"></i>
+                                </div>
+                                <span class="text-[10px] font-black text-slate-300 uppercase">Sáp nhập</span>
+                            </div>
+                            <div class="flex-1">
+                                <div
+                                    class="bg-blue-600 p-6 rounded-2xl text-center shadow-xl shadow-blue-100 border-2 border-blue-400">
+                                    <span id="resNewName" class="text-white font-bold text-lg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-[2rem] p-8 text-white shadow-2xl">
+                    <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="file-text" class="text-blue-400"></i> Căn cứ Pháp lý
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-slate-400 text-[10px] font-black uppercase mb-2">Văn kiện / Quyết định</p>
+                            <p id="resResolution" class="font-bold text-blue-100 leading-tight mb-2"></p>
+                            <p id="resSubResolution" class="text-sm text-slate-300"></p>
+                        </div>
+                        <div id="resLinksBlock" class="hidden">
+                            <p class="text-slate-400 text-[10px] font-black uppercase mb-2">Nguồn trích xuất</p>
+                            <div class="flex flex-col gap-2" id="resLinks">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold mb-8 flex items-center gap-2">
+                    <i data-lucide="user-check" class="text-orange-500"></i> Công dân cần cập nhật giấy tờ
+                </h3>
+                <div id="resImpacts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-5xl mx-auto py-12 px-4 border-t border-slate-200 text-center">
+        <p class="text-slate-400 text-sm font-medium">© 2026 Địa chính Việt Nam - Nền tảng dữ liệu phục vụ Audit
+            Citizens theo AEO.</p>
+    </footer>
+
+    <script>
+        let dbData = [];
+
+        // Load JSON data
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                dbData = data.merged_units;
+            })
+            .catch(error => console.error("Error loading knowledge data:", error));
+
+        const searchInput = document.getElementById('searchInput');
+        const resultArea = document.getElementById('resultArea');
+        const defaultState = document.getElementById('defaultState');
+        const roadmapNode = document.getElementById('systemRoadmap');
+
+        // Normalizing text for insensitive matching
+        function normalizeStr(str) {
+            return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+        }
+
+        function quickSearch(val) {
+            searchInput.value = val;
+            handleSearch(val);
+        }
+
+        searchInput.addEventListener('input', (e) => handleSearch(e.target.value));
+
+        function handleSearch(val) {
+            const cleanVal = normalizeStr(val);
+            if (cleanVal.length < 2) {
+                resultArea.classList.add('hidden');
+                defaultState.classList.remove('hidden');
+                roadmapNode.classList.add('hidden');
+                return;
+            }
+
+            const result = dbData.find(item => {
+                let match = normalizeStr(item.new_name).includes(cleanVal);
+                if (item.old_units && item.old_units.length > 0) {
+                    item.old_units.forEach(u => {
+                        if (normalizeStr(u.name).includes(cleanVal)) match = true;
+                    });
+                }
+                return match;
+            });
+
+            if (result) {
+                renderResult(result, cleanVal);
+                resultArea.classList.remove('hidden');
+                defaultState.classList.add('hidden');
+            } else {
+                resultArea.classList.add('hidden');
+                defaultState.classList.remove('hidden');
+                roadmapNode.classList.remove('hidden');
+            }
+        }
+
+        function renderResult(data, query) {
+            const oldNames = data.old_units.map(u => u.name).join(' và ');
+
+            // Check if query matched old name
+            const isConfused = data.old_units.some(u => normalizeStr(u.name).includes(query));
+
+            document.getElementById('resTitle').innerText = data.new_name;
+            document.getElementById('resSubtitle').innerText = `${data.new_type} thuộc phân vùng ${data.region || ''}`;
+
+            // Format dates
+            let parts = data.effective_date.split('-');
+            let fDate = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : data.effective_date;
+            document.getElementById('resDate').innerText = fDate;
+
+            document.getElementById('resResolution').innerText = data.resolution;
+            document.getElementById('resSubResolution').innerText = data.sub_unit_resolution || '';
+            document.getElementById('resNewName').innerText = data.new_name;
+
+            // AEO Logic formulation
+            let aeoText = `Theo ${data.resolution}, các đơn vị ${oldNames} đã chính thức sáp nhập thành ${data.new_name} mang cấp độ ${data.new_type}. `;
+            if (isConfused) {
+                aeoText = ` (Trước đây gọi là ${oldNames}). ` + aeoText;
+            }
+            aeoText += `Sự thay đổi về địa giới này chính thức có hiệu lực từ ngày ${fDate}.`;
+            document.getElementById('aeoOverview').innerText = aeoText;
+
+            // Render Comparison Table
+            const tbody = document.getElementById('comparisonTableBody');
+            let popNumber = data.population ? data.population.toLocaleString('vi-VN') : 'Đang cập nhật';
+            let sqNumber = data.area_km2 ? data.area_km2.toLocaleString('vi-VN') : 'Đang cập nhật';
+
+            tbody.innerHTML = `
+                <tr class="border-b">
+                    <td class="p-3 text-sm text-slate-800 font-medium">Tên gọi / Phân cấp</td>
+                    <td class="p-3 text-sm text-slate-500">${oldNames}</td>
+                    <td class="p-3 text-sm text-slate-800 font-bold text-blue-600">${data.new_name} (${data.new_type})</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-3 text-sm text-slate-800 font-medium">Diện tích (km2) / Dân số</td>
+                    <td class="p-3 text-sm text-slate-500">Phân mảnh địa giới</td>
+                    <td class="p-3 text-sm text-slate-800 font-bold">${sqNumber} km2 / ${popNumber} người</td>
+                </tr>
+            `;
+
+            // Render Old Units Model
+            const oldContainer = document.getElementById('resOldUnits');
+            oldContainer.innerHTML = data.old_units.map(u => `
+                <div class="bg-slate-50 border-2 border-dashed border-slate-200 p-4 rounded-xl text-center">
+                    <span class="text-sm font-bold text-slate-500">${u.name} (${u.type})</span>
+                </div>
+            `).join('');
+
+            // Render Impacts
+            const impactContainer = document.getElementById('resImpacts');
+            if (data.affected_procedures && Array.isArray(data.affected_procedures)) {
+                impactContainer.innerHTML = data.affected_procedures.map(imp => {
+                    let type = "Cập nhật tài liệu";
+                    if (imp.toLowerCase().includes("cccd") || imp.toLowerCase().includes("hộ chiếu")) type = "Định danh cá nhân";
+                    if (imp.toLowerCase().includes("sổ đỏ") || imp.toLowerCase().includes("đất")) type = "Tài sản / Đất đai";
+                    if (imp.toLowerCase().includes("kinh doanh") || imp.toLowerCase().includes("thuế")) type = "Kinh doanh / Thuế";
+
+                    return `
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block text-[10px] uppercase font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-sm mb-3">${type}</span>
+                            <p class="font-medium text-slate-800 text-sm leading-relaxed">${imp}</p>
+                        </div>
+                    </div>
+                `}).join('');
+            } else {
+                impactContainer.innerHTML = `<p class="col-span-full text-slate-500 italic text-sm">Chưa có thông tin danh mục thay đổi cụ thể.</p>`;
+            }
+
+            // Render Sources
+            const linksBlock = document.getElementById('resLinksBlock');
+            const linksCon = document.getElementById('resLinks');
+            if (data.source_urls && data.source_urls.length > 0) {
+                linksBlock.classList.remove('hidden');
+                linksCon.innerHTML = data.source_urls.map(url => `
+                    <a href="${url}" target="_blank" class="text-xs text-blue-400 hover:text-white hover:underline flex items-center gap-1 font-medium truncate">
+                        <i data-lucide="link" class="w-3 h-3"></i> Nguồn tham chiếu
+                    </a>
+                `).join('');
+            } else {
+                linksBlock.classList.add('hidden');
+            }
+
+            // Re-init icons
+            lucide.createIcons();
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
