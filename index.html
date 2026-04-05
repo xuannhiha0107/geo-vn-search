@@ -33,7 +33,14 @@
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2 font-extrabold text-blue-700 text-xl tracking-tight">
                 <i data-lucide="map-pin" class="text-orange-500"></i>
-                <span>ĐỊA CHÍNH VIỆT NAM</span>
+                <span id="txt-appTitle">ĐỊA CHÍNH VIỆT NAM</span>
+            </div>
+            <div>
+                <select id="langSelect" class="bg-slate-100 border-none outline-none text-sm font-semibold text-slate-700 py-1 px-3 rounded-lg cursor-pointer" onchange="changeLanguage(this.value)">
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
             </div>
         </div>
         </div>
@@ -41,10 +48,10 @@
 
     <header class="bg-white pt-16 pb-10 px-4 border-b border-slate-100">
         <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
+            <h1 id="txt-headerTitle" class="text-3xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
                 Tra cứu thay đổi <span class="text-blue-600">Địa chính & Hành chính</span>
             </h1>
-            <p class="text-slate-500 mb-10 text-lg">Đơn giản, chính xác, cập nhật theo thông tin Chính phủ (Cập nhật
+            <p id="txt-headerDesc" class="text-slate-500 mb-10 text-lg">Đơn giản, chính xác, cập nhật theo thông tin Chính phủ (Cập nhật
                 Tháng 4/2026).</p>
 
             <div class="relative group max-w-2xl mx-auto">
@@ -57,10 +64,10 @@
             </div>
             <div
                 class="mt-4 flex flex-wrap justify-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-                <span>Gợi ý:</span>
+                <span id="txt-suggestion">Gợi ý:</span>
                 <button onclick="quickSearch('Lâm Đồng')" class="text-blue-600 hover:underline">Lâm Đồng</button>
-                <button onclick="quickSearch('Đắk Nông')" class="text-blue-600 hover:underline ml-2">Đắk Nông</button>
-                <button onclick="quickSearch('Hà Nội')" class="text-blue-600 hover:underline ml-2">Hà Nội</button>
+                <button onclick="quickSearch('Hưng Yên')" class="text-blue-600 hover:underline ml-2">Hưng Yên</button>
+                <button onclick="quickSearch('Đồng Nai')" class="text-blue-600 hover:underline ml-2">Đồng Nai</button>
             </div>
         </div>
     </header>
@@ -72,8 +79,8 @@
                     class="p-6 bg-white rounded-3xl shadow-sm border border-slate-200 flex gap-4 hover:shadow-md transition-all">
                     <div class="bg-blue-100 p-3 rounded-2xl text-blue-600 shrink-0"><i data-lucide="info"></i></div>
                     <div>
-                        <h4 class="font-bold">Dữ liệu chuẩn xác định</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed">Cung cấp câu trả lời trực tiếp cho người dân
+                        <h4 id="txt-benefit1Title" class="font-bold">Dữ liệu chuẩn xác định</h4>
+                        <p id="txt-benefit1Desc" class="text-sm text-slate-500 leading-relaxed">Cung cấp câu trả lời trực tiếp cho người dân
                             (Hệ thống Audit Citizens).</p>
                     </div>
                 </div>
@@ -82,8 +89,8 @@
                     <div class="bg-orange-100 p-3 rounded-2xl text-orange-600 shrink-0"><i data-lucide="file-text"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold">Hướng dẫn thủ tục</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed">Thông tin chi tiết giấy tờ hành chính cần thay
+                        <h4 id="txt-benefit2Title" class="font-bold">Hướng dẫn thủ tục</h4>
+                        <p id="txt-benefit2Desc" class="text-sm text-slate-500 leading-relaxed">Thông tin chi tiết giấy tờ hành chính cần thay
                             đổi khi sáp nhập địa giới (CCCD, Sổ hộ khẩu, Sổ đỏ,...).</p>
                     </div>
                 </div>
@@ -91,7 +98,7 @@
             <div
                 class="bg-slate-200 aspect-video rounded-[2.5rem] flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-300 p-10 text-center">
                 <i data-lucide="map" class="mb-4 opacity-30 w-16 h-16"></i>
-                <p class="font-medium">Vui lòng nhập tên địa danh để tra cứu thông tin sáp nhập</p>
+                <p id="txt-defaultWait" class="font-medium">Vui lòng nhập tên địa danh để tra cứu thông tin sáp nhập</p>
                 <p id="systemRoadmap" class="text-sm mt-2 text-red-400 hidden">Địa danh chưa có hoặc chờ ban hành quyết
                     định (Cập nhật hệ thống vào Tháng 5/2026).</p>
             </div>
@@ -100,7 +107,7 @@
         <div id="resultArea" class="hidden space-y-8 animate-in fade-in duration-500">
             <!-- AEO 2-Sentence Answers -->
             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl">
-                <h3 class="font-bold text-blue-800 flex items-center gap-2 mb-2"><i data-lucide="zap"
+                <h3 id="txt-statusOverview" class="font-bold text-blue-800 flex items-center gap-2 mb-2"><i data-lucide="zap"
                         class="w-5 h-5"></i> Trạng thái & Tổng quan báo cáo</h3>
                 <p id="aeoOverview" class="text-slate-700 text-lg leading-relaxed"></p>
             </div>
@@ -109,13 +116,13 @@
                 <div>
                     <div class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold mb-3"
                         id="resStatusBadge">
-                        <i data-lucide="check-circle" class="w-3 h-3"></i> TÌNH TRẠNG: ĐÃ SÁP NHẬP
+                        <i data-lucide="check-circle" class="w-3 h-3"></i> <span id="txt-statusMerged">TÌNH TRẠNG: ĐÃ SÁP NHẬP</span>
                     </div>
                     <h2 id="resTitle" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight"></h2>
                     <p id="resSubtitle" class="text-slate-500 text-xl mt-2 font-medium"></p>
                 </div>
                 <div class="bg-orange-600 text-white rounded-3xl p-6 shadow-lg shadow-orange-100 min-w-[240px]">
-                    <p class="text-orange-200 text-xs font-bold uppercase tracking-widest mb-1">Ngày có hiệu lực</p>
+                    <p id="txt-effectiveDate" class="text-orange-200 text-xs font-bold uppercase tracking-widest mb-1">Ngày có hiệu lực</p>
                     <p id="resDate" class="text-2xl font-black"></p>
                 </div>
             </div>
@@ -123,14 +130,14 @@
             <!-- Comparison Table -->
             <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm overflow-x-auto">
                 <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-slate-700">
-                    <i data-lucide="table" class="text-blue-500"></i> Bảng đối chiếu Thông số
+                    <i data-lucide="table" class="text-blue-500"></i> <span id="txt-comparisonTable">Bảng đối chiếu Thông số</span>
                 </h3>
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-slate-100">
-                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Đặc điểm</th>
-                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Trước Sáp nhập (Cũ)</th>
-                            <th class="p-3 border-b text-sm font-semibold text-slate-600">Sau Sáp nhập (Mới)</th>
+                            <th id="txt-thFeature" class="p-3 border-b text-sm font-semibold text-slate-600">Đặc điểm</th>
+                            <th id="txt-thOld" class="p-3 border-b text-sm font-semibold text-slate-600">Trước Sáp nhập (Cũ)</th>
+                            <th id="txt-thNew" class="p-3 border-b text-sm font-semibold text-slate-600">Sau Sáp nhập (Mới)</th>
                         </tr>
                     </thead>
                     <tbody id="comparisonTableBody">
@@ -142,7 +149,7 @@
                 <div
                     class="md:col-span-2 bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm overflow-hidden">
                     <h3 class="text-lg font-bold mb-8 flex items-center gap-2 text-slate-700">
-                        <i data-lucide="git-merge" class="text-blue-500"></i> Sơ đồ sáp nhập không gian
+                        <i data-lucide="git-merge" class="text-blue-500"></i> <span id="txt-mergeMap">Sơ đồ sáp nhập không gian</span>
                     </h3>
                     <div class="flex flex-col items-center py-6">
                         <div class="flex items-center justify-center gap-4 md:gap-10 w-full">
@@ -153,7 +160,7 @@
                                     class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-2">
                                     <i data-lucide="arrow-right"></i>
                                 </div>
-                                <span class="text-[10px] font-black text-slate-300 uppercase">Sáp nhập</span>
+                                <span id="txt-mergeLabel" class="text-[10px] font-black text-slate-300 uppercase">Sáp nhập</span>
                             </div>
                             <div class="flex-1">
                                 <div
@@ -167,16 +174,16 @@
 
                 <div class="bg-slate-900 rounded-[2rem] p-8 text-white shadow-2xl">
                     <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
-                        <i data-lucide="file-text" class="text-blue-400"></i> Căn cứ Pháp lý
+                        <i data-lucide="file-text" class="text-blue-400"></i> <span id="txt-legalBasis">Căn cứ Pháp lý</span>
                     </h3>
                     <div class="space-y-6">
                         <div>
-                            <p class="text-slate-400 text-[10px] font-black uppercase mb-2">Văn kiện / Quyết định</p>
+                            <p id="txt-docDecision" class="text-slate-400 text-[10px] font-black uppercase mb-2">Văn kiện / Quyết định</p>
                             <p id="resResolution" class="font-bold text-blue-100 leading-tight mb-2"></p>
                             <p id="resSubResolution" class="text-sm text-slate-300"></p>
                         </div>
                         <div id="resLinksBlock" class="hidden">
-                            <p class="text-slate-400 text-[10px] font-black uppercase mb-2">Nguồn trích xuất</p>
+                            <p id="txt-sourceOrigin" class="text-slate-400 text-[10px] font-black uppercase mb-2">Nguồn trích xuất</p>
                             <div class="flex flex-col gap-2" id="resLinks">
                             </div>
                         </div>
@@ -186,20 +193,181 @@
 
             <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm">
                 <h3 class="text-xl font-bold mb-8 flex items-center gap-2">
-                    <i data-lucide="user-check" class="text-orange-500"></i> Công dân cần cập nhật giấy tờ
+                    <i data-lucide="user-check" class="text-orange-500"></i> <span id="txt-citizenUpdate">Công dân cần cập nhật giấy tờ</span>
                 </h3>
                 <div id="resImpacts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 </div>
             </div>
         </div>
-    <div id="seoLinks" class="max-w-5xl mx-auto px-4"><div class="mt-12 bg-white rounded-[2rem] p-8 border border-slate-200"> <h3 class="text-xl font-bold mb-4">Danh mục tra cứu địa giới hành chính (Dành cho máy chủ & AI)</h3> <ul class="grid grid-cols-2 md:grid-cols-4 gap-4"><li><a href="tinh/tinh-tuyen-quang.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Tuyên Quang</a></li><li><a href="tinh/tinh-lao-cai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Lào Cai</a></li><li><a href="tinh/tinh-thai-nguyen.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Thái Nguyên</a></li><li><a href="tinh/tinh-phu-tho.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Phú Thọ</a></li><li><a href="tinh/tinh-bac-ninh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Bắc Ninh</a></li><li><a href="tinh/tinh-hung-yen.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Hưng Yên</a></li><li><a href="tinh/thanh-pho-hai-phong.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Hải Phòng</a></li><li><a href="tinh/tinh-ninh-binh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Ninh Bình</a></li><li><a href="tinh/tinh-quang-tri.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Quảng Trị</a></li><li><a href="tinh/thanh-pho-a-nang.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Đà Nẵng</a></li><li><a href="tinh/tinh-quang-ngai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Quảng Ngãi</a></li><li><a href="tinh/tinh-gia-lai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Gia Lai</a></li><li><a href="tinh/tinh-khanh-hoa.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Khánh Hòa</a></li><li><a href="tinh/tinh-lam-ong.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Lâm Đồng</a></li><li><a href="tinh/tinh-ak-lak.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đắk Lắk</a></li><li><a href="tinh/thanh-pho-ho-chi-minh.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Hồ Chí Minh</a></li><li><a href="tinh/tinh-ong-nai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đồng Nai</a></li><li><a href="tinh/tinh-tay-ninh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Tây Ninh</a></li><li><a href="tinh/thanh-pho-can-tho.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Cần Thơ</a></li><li><a href="tinh/tinh-vinh-long.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Vĩnh Long</a></li><li><a href="tinh/tinh-ong-thap.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đồng Tháp</a></li><li><a href="tinh/tinh-ca-mau.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Cà Mau</a></li><li><a href="tinh/tinh-an-giang.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh An Giang</a></li></ul></div></div></main>
+    <div id="seoLinks" class="max-w-5xl mx-auto px-4"><div class="mt-12 bg-white rounded-[2rem] p-8 border border-slate-200"> <h3 class="text-xl font-bold mb-4"><span id="txt-seoTitle">Danh mục tra cứu địa giới hành chính (Dành cho máy chủ & AI)</span></h3> <ul class="grid grid-cols-2 md:grid-cols-4 gap-4"><li><a href="tinh/tinh-tuyen-quang.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Tuyên Quang</a></li><li><a href="tinh/tinh-lao-cai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Lào Cai</a></li><li><a href="tinh/tinh-thai-nguyen.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Thái Nguyên</a></li><li><a href="tinh/tinh-phu-tho.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Phú Thọ</a></li><li><a href="tinh/tinh-bac-ninh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Bắc Ninh</a></li><li><a href="tinh/tinh-hung-yen.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Hưng Yên</a></li><li><a href="tinh/thanh-pho-hai-phong.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Hải Phòng</a></li><li><a href="tinh/tinh-ninh-binh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Ninh Bình</a></li><li><a href="tinh/tinh-quang-tri.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Quảng Trị</a></li><li><a href="tinh/thanh-pho-a-nang.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Đà Nẵng</a></li><li><a href="tinh/tinh-quang-ngai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Quảng Ngãi</a></li><li><a href="tinh/tinh-gia-lai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Gia Lai</a></li><li><a href="tinh/tinh-khanh-hoa.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Khánh Hòa</a></li><li><a href="tinh/tinh-lam-ong.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Lâm Đồng</a></li><li><a href="tinh/tinh-ak-lak.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đắk Lắk</a></li><li><a href="tinh/thanh-pho-ho-chi-minh.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Hồ Chí Minh</a></li><li><a href="tinh/tinh-ong-nai.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đồng Nai</a></li><li><a href="tinh/tinh-tay-ninh.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Tây Ninh</a></li><li><a href="tinh/thanh-pho-can-tho.html" class="text-blue-600 hover:underline">Sáp nhập Thành phố Cần Thơ</a></li><li><a href="tinh/tinh-vinh-long.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Vĩnh Long</a></li><li><a href="tinh/tinh-ong-thap.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Đồng Tháp</a></li><li><a href="tinh/tinh-ca-mau.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh Cà Mau</a></li><li><a href="tinh/tinh-an-giang.html" class="text-blue-600 hover:underline">Sáp nhập Tỉnh An Giang</a></li></ul></div></div></main>
 
     <footer class="max-w-5xl mx-auto py-12 px-4 border-t border-slate-200 text-center">
-        <p class="text-slate-400 text-sm font-medium">© 2026 Địa chính Việt Nam - Nền tảng dữ liệu phục vụ Audit
-            Citizens theo AEO.</p>
+        <p class="text-slate-400 text-sm font-medium"><span id="txt-footer">© 2026 Địa chính Việt Nam - Nền tảng dữ liệu phục vụ Audit Citizens theo AEO.</span></p>
     </footer>
 
     <script>
+        
+        const i18n = {
+            vi: {
+                appTitle: "ĐỊA CHÍNH VIỆT NAM",
+                headerTitle: 'Tra cứu thay đổi <span class="text-blue-600">Địa chính & Hành chính</span>',
+                headerDesc: "Đơn giản, chính xác, cập nhật theo thông tin Chính phủ (Cập nhật Tháng 4/2026).",
+                searchPlaceholder: "Nhập tên tỉnh/thành phố cũ hoặc mới (Vd: Lâm Đồng, Hà Nam)...",
+                suggestion: "Gợi ý:",
+                benefit1Title: "Dữ liệu chuẩn xác định",
+                benefit1Desc: "Cung cấp câu trả lời trực tiếp cho người dân (Hệ thống Audit Citizens).",
+                benefit2Title: "Hướng dẫn thủ tục",
+                benefit2Desc: "Thông tin chi tiết giấy tờ hành chính cần thay đổi khi sáp nhập địa giới (CCCD, Sổ hộ khẩu, Sổ đỏ,...).",
+                defaultWait: "Vui lòng nhập tên địa danh để tra cứu thông tin sáp nhập",
+                systemRoadmap: "Địa danh chưa có hoặc chờ ban hành quyết định (Cập nhật hệ thống vào Tháng 5/2026).",
+                statusOverview: 'Trạng thái & Tổng quan báo cáo',
+                statusMerged: "TÌNH TRẠNG: ĐÃ SÁP NHẬP",
+                effectiveDate: "Ngày có hiệu lực",
+                comparisonTable: "Bảng đối chiếu Thông số",
+                thFeature: "Đặc điểm",
+                thOld: "Trước Sáp nhập (Cũ)",
+                thNew: "Sau Sáp nhập (Mới)",
+                mergeMap: "Sơ đồ sáp nhập không gian",
+                mergeLabel: "Sáp nhập",
+                legalBasis: "Căn cứ Pháp lý",
+                docDecision: "Văn kiện / Quyết định",
+                sourceOrigin: "Nguồn trích xuất",
+                citizenUpdate: "Công dân cần cập nhật giấy tờ",
+                seoTitle: "Danh mục tra cứu địa giới hành chính (Dành cho máy chủ & AI)",
+                footer: "© 2026 Địa chính Việt Nam - Nền tảng dữ liệu phục vụ Audit Citizens theo AEO.",
+                tblNameLevel: "Tên gọi / Phân cấp",
+                tblAreaPop: "Diện tích (km2) / Dân số",
+                tblFrag: "Phân mảnh địa giới",
+                tblPeople: "người",
+                tblUpdating: "Đang cập nhật",
+                noImpact: "Chưa có thông tin danh mục thay đổi cụ thể.",
+                linkSource: "Nguồn tham chiếu",
+                lblUpdateDoc: "Cập nhật tài liệu",
+                lblIdentity: "Định danh cá nhân",
+                lblProperty: "Tài sản / Đất đai",
+                lblBusiness: "Kinh doanh / Thuế"
+            },
+            en: {
+                appTitle: "VIETNAM GEO-ADMIN",
+                headerTitle: 'Look up <span class="text-blue-600">Administrative & Geo</span> changes',
+                headerDesc: "Simple, accurate, updated according to Government info (Updated April 2026).",
+                searchPlaceholder: "Enter old or new province/city name (e.g., Lam Dong, Ha Nam)...",
+                suggestion: "Suggestions:",
+                benefit1Title: "Accurate Data",
+                benefit1Desc: "Provide direct answers to citizens (Audit Citizens System).",
+                benefit2Title: "Procedure Guidelines",
+                benefit2Desc: "Detailed info on administrative documents to change after merging (ID, Family Book, Land Title,...).",
+                defaultWait: "Please enter a location name to look up merger information",
+                systemRoadmap: "Location not found or awaiting decision (System update in May 2026).",
+                statusOverview: 'Status & Report Overview',
+                statusMerged: "STATUS: MERGED",
+                effectiveDate: "Effective Date",
+                comparisonTable: "Parameter Comparison Table",
+                thFeature: "Characteristic",
+                thOld: "Before Merger (Old)",
+                thNew: "After Merger (New)",
+                mergeMap: "Spatial Merger Map",
+                mergeLabel: "Merger",
+                legalBasis: "Legal Basis",
+                docDecision: "Document / Decision",
+                sourceOrigin: "Source Extraction",
+                citizenUpdate: "Citizens need to update documents",
+                seoTitle: "Administrative boundary lookup directory (For servers & AI)",
+                footer: "© 2026 Vietnam Geo-Admin - Data platform serving Audit Citizens under AEO.",
+                tblNameLevel: "Name / Level",
+                tblAreaPop: "Area (km2) / Population",
+                tblFrag: "Fragmented boundaries",
+                tblPeople: "people",
+                tblUpdating: "Updating",
+                noImpact: "No specific change catalog information available yet.",
+                linkSource: "Reference source",
+                lblUpdateDoc: "Document Update",
+                lblIdentity: "Personal Identity",
+                lblProperty: "Property / Land",
+                lblBusiness: "Business / Tax"
+            },
+            zh: {
+                appTitle: "越南地理及行政",
+                headerTitle: '查询 <span class="text-blue-600">地理与行政</span> 变更',
+                headerDesc: "简单、准确，根据政府信息进行更新（2026年4月更新）。",
+                searchPlaceholder: "输入新旧省/市名称 (例如: 林同, 河南)...",
+                suggestion: "建议:",
+                benefit1Title: "准确数据",
+                benefit1Desc: "为公民提供直接答复 (审计公民系统)。",
+                benefit2Title: "办理指南",
+                benefit2Desc: "合并后需要更改的行政文件详细信息 (身份证, 户口本, 房产证, ...)。",
+                defaultWait: "请输入地点名称以查询合并信息",
+                systemRoadmap: "未找到地点或等待决定 (系统将于2026年5月更新)。",
+                statusOverview: '状态及报告概览',
+                statusMerged: "状态: 已合并",
+                effectiveDate: "生效日期",
+                comparisonTable: "参数对比表",
+                thFeature: "特点",
+                thOld: "合并前 (旧)",
+                thNew: "合并后 (新)",
+                mergeMap: "空间合并图",
+                mergeLabel: "合并",
+                legalBasis: "法律依据",
+                docDecision: "文件 / 决定",
+                sourceOrigin: "来源提取",
+                citizenUpdate: "公民需更新文件",
+                seoTitle: "行政边界查询目录 (适用于服务器及AI)",
+                footer: "© 2026 越南地理及行政 - 根据 AEO 服务于审计公民的数据平台。",
+                tblNameLevel: "名称 / 级别",
+                tblAreaPop: "面积 (平方公里) / 人口",
+                tblFrag: "分散边界",
+                tblPeople: "人",
+                tblUpdating: "更新中",
+                noImpact: "暂无具体变更目录信息。",
+                linkSource: "参考来源",
+                lblUpdateDoc: "文件更新",
+                lblIdentity: "个人身份",
+                lblProperty: "财产 / 土地",
+                lblBusiness: "商业 / 税务"
+            }
+        };
+
+        window.currentLang = 'vi';
+
+        function changeLanguage(lang) {
+            window.currentLang = lang;
+            const t = i18n[lang];
+            
+            document.getElementById('txt-appTitle').innerHTML = t.appTitle;
+            document.getElementById('txt-headerTitle').innerHTML = t.headerTitle;
+            document.getElementById('txt-headerDesc').innerHTML = t.headerDesc;
+            document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+            document.getElementById('txt-suggestion').innerHTML = t.suggestion;
+            document.getElementById('txt-benefit1Title').innerHTML = t.benefit1Title;
+            document.getElementById('txt-benefit1Desc').innerHTML = t.benefit1Desc;
+            document.getElementById('txt-benefit2Title').innerHTML = t.benefit2Title;
+            document.getElementById('txt-benefit2Desc').innerHTML = t.benefit2Desc;
+            document.getElementById('txt-defaultWait').innerHTML = t.defaultWait;
+            document.getElementById('systemRoadmap').innerHTML = t.systemRoadmap;
+            if(document.getElementById('txt-statusOverview')) document.getElementById('txt-statusOverview').innerHTML = '<i data-lucide="zap" class="w-5 h-5"></i> ' + t.statusOverview;
+            if(document.getElementById('txt-statusMerged')) document.getElementById('txt-statusMerged').innerText = t.statusMerged;
+            if(document.getElementById('txt-effectiveDate')) document.getElementById('txt-effectiveDate').innerText = t.effectiveDate;
+            if(document.getElementById('txt-comparisonTable')) document.getElementById('txt-comparisonTable').innerText = t.comparisonTable;
+            if(document.getElementById('txt-thFeature')) document.getElementById('txt-thFeature').innerText = t.thFeature;
+            if(document.getElementById('txt-thOld')) document.getElementById('txt-thOld').innerText = t.thOld;
+            if(document.getElementById('txt-thNew')) document.getElementById('txt-thNew').innerText = t.thNew;
+            if(document.getElementById('txt-mergeMap')) document.getElementById('txt-mergeMap').innerText = t.mergeMap;
+            if(document.getElementById('txt-mergeLabel')) document.getElementById('txt-mergeLabel').innerText = t.mergeLabel;
+            if(document.getElementById('txt-legalBasis')) document.getElementById('txt-legalBasis').innerText = t.legalBasis;
+            if(document.getElementById('txt-docDecision')) document.getElementById('txt-docDecision').innerText = t.docDecision;
+            if(document.getElementById('txt-sourceOrigin')) document.getElementById('txt-sourceOrigin').innerText = t.sourceOrigin;
+            if(document.getElementById('txt-citizenUpdate')) document.getElementById('txt-citizenUpdate').innerText = t.citizenUpdate;
+            if(document.getElementById('txt-seoTitle')) document.getElementById('txt-seoTitle').innerText = t.seoTitle;
+            if(document.getElementById('txt-footer')) document.getElementById('txt-footer').innerText = t.footer;
+
+            // Re-render current search results if exists
+            const val = document.getElementById('searchInput').value;
+            if (val && val.length >= 2) {
+                handleSearch(val);
+            }
+            lucide.createIcons();
+        }
+        
         let dbData = [];
 
         // Load JSON data
@@ -216,6 +384,154 @@
         const roadmapNode = document.getElementById('systemRoadmap');
 
         // Normalizing text for insensitive matching
+        
+        function trType(type) {
+            if (window.currentLang === 'vi') return type;
+            const mEn = {
+                "Tỉnh": "Province",
+                "Thành phố trực thuộc Trung ương": "Municipality",
+                "Thành phố": "City",
+                "Thị xã": "Town",
+                "Huyện": "District",
+                "Xã": "Commune",
+                "Phường": "Ward"
+            };
+            const mZh = {
+                "Tỉnh": "省",
+                "Thành phố trực thuộc Trung ương": "直辖市",
+                "Thành phố": "市",
+                "Thị xã": "市社",
+                "Huyện": "县",
+                "Xã": "社",
+                "Phường": "坊"
+            };
+            return window.currentLang === 'en' ? (mEn[type] || type) : (mZh[type] || type);
+        }
+
+        function trRegionName(region) {
+            if (!region || window.currentLang === 'vi') return region;
+            const mEn = {
+                'Trung du và miền núi phía Bắc': 'Northern Midlands and Mountains',
+                'Đồng bằng sông Hồng': 'Red River Delta',
+                'Bắc Trung Bộ': 'North Central Coast',
+                'Nam Trung Bộ': 'South Central Coast',
+                'Tây Nguyên': 'Central Highlands',
+                'Đông Nam Bộ': 'Southeast',
+                'Đồng bằng sông Cửu Long': 'Mekong River Delta',
+                'Trung du và miền núi phía Bắc / Đồng bằng sông Hồng': 'Northern Midlands / Red River Delta',
+                'Nam Trung Bộ / Tây Nguyên': 'South Central Coast / Central Highlands',
+                'Tây Nguyên / Nam Trung Bộ': 'Central Highlands / South Central Coast'
+            };
+            const mZh = {
+                'Trung du và miền núi phía Bắc': '北部中部和山区',
+                'Đồng bằng sông Hồng': '红河三角洲',
+                'Bắc Trung Bộ': '北中部沿海',
+                'Nam Trung Bộ': '南中部沿海',
+                'Tây Nguyên': '中部高原',
+                'Đông Nam Bộ': '东南部',
+                'Đồng bằng sông Cửu Long': '湄公河三角洲',
+                'Trung du và miền núi phía Bắc / Đồng bằng sông Hồng': '北部中部 / 红河三角洲',
+                'Nam Trung Bộ / Tây Nguyên': '南中部沿海 / 中部高原',
+                'Tây Nguyên / Nam Trung Bộ': '中部高原 / 南中部沿海'
+            };
+            return window.currentLang === 'en' ? (mEn[region] || region) : (mZh[region] || region);
+        }
+
+        function trGeo(text) {
+            if (!text || window.currentLang === 'vi') return text;
+            let res = text;
+
+            if (window.currentLang === 'en') {
+                res = res.replace(/Nghị quyết/g, 'Resolution');
+                res = res.replace(/về sắp xếp ĐVHC cấp xã/g, 'on arranging commune-level administrative units of');
+                res = res.replace(/năm (\d{4})/g, 'in $1');
+                res = res.replace(/ngày/g, 'dated');
+                res = res.replace(/ và /g, ' and ');
+                // Negative lookahead: don't match "Thành phố trực" (which is a type, not a city name)
+                res = res.replace(/Thành phố (?!trực )([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 City');
+                res = res.replace(/Tỉnh ([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 Province');
+                res = res.replace(/Thị xã ([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 Town');
+                res = res.replace(/Huyện ([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 District');
+                res = res.replace(/Phường ([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 Ward');
+                res = res.replace(/Xã ([\p{L}\d ]+?)(?=\s*(?:và|and|$|,|\.|–|\())/gu, '$1 Commune');
+                res = res.replace(/\btỉnh\b/g, 'province');
+                res = res.replace(/\bthành phố\b/g, 'city');
+            } else if (window.currentLang === 'zh') {
+                res = res.replace(/Nghị quyết/g, '决议');
+                res = res.replace(/về sắp xếp ĐVHC cấp xã/g, '关于安排乡级行政单位');
+                res = res.replace(/năm (\d{4})/g, '$1年');
+                res = res.replace(/ngày/g, '日期为');
+                res = res.replace(/ và /g, ' 和 ');
+                res = res.replace(/Thành phố (?!trực )([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1市');
+                res = res.replace(/Tỉnh ([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1省');
+                res = res.replace(/Thị xã ([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1市社');
+                res = res.replace(/Huyện ([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1县');
+                res = res.replace(/Phường ([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1坊');
+                res = res.replace(/Xã ([\p{L}\d ]+?)(?=\s*(?:và| 和|$|,|\.|–|\())/gu, '$1社');
+                res = res.replace(/\btỉnh\b/g, '省');
+                res = res.replace(/\bthành phố\b/g, '市');
+            }
+            return res;
+        }
+
+        function trProcedure(text) {
+            if (window.currentLang === 'vi') return text;
+            const mEn = {
+                "Đổi căn cước công dân/thẻ CCCD": "Change citizen ID card / CCCD",
+                "Đổi căn cước công dân/thẻ CCCD (địa chỉ thường trú)": "Change citizen ID card (permanent address)",
+                "Cập nhật sổ hộ khẩu, xác nhận cư trú": "Update residence confirmation",
+                "Cập nhật xác nhận cư trú": "Update residence confirmation",
+                "Đổi giấy phép lái xe": "Change driver's license",
+                "Đổi giấy phép lái xe (nơi cấp)": "Change driver's license",
+                "Đổi giấy chứng nhận đăng ký kinh doanh": "Change business registration",
+                "Đổi đăng ký kinh doanh": "Change business registration",
+                "Đổi giấy chứng nhận quyền sử dụng đất": "Change land use right certificate",
+                "Đổi giấy chứng nhận quyền sử dụng đất (sổ đỏ/sổ hồng)": "Change land use right certificate",
+                "Đổi giấy chứng nhận QSDĐ": "Change land use right certificate",
+                "Chuyển đổi mã số thuế": "Change tax code",
+                "Chuyển đổi mã số thuế doanh nghiệp/cá nhân": "Change tax code",
+                "Cập nhật bảo hiểm xã hội, bảo hiểm y tế": "Update social/health insurance",
+                "Cập nhật BHXH, BHYT": "Update social/health insurance",
+                "Cập nhật giấy tờ bảo hiểm xã hội, bảo hiểm y tế": "Update social/health insurance",
+                "Đăng ký biển số xe": "Register license plate",
+                "Đăng ký biển số xe mới": "Register new license plate",
+                "Thủ tục hộ tịch": "Civil status procedures",
+                "Thủ tục hộ tịch (khai sinh, khai tử, đăng ký kết hôn)": "Civil status procedures",
+                "Cập nhật địa chỉ hợp đồng, chứng từ pháp lý": "Update legal document address",
+                "Cập nhật hợp đồng, chứng từ pháp lý": "Update legal document address",
+                "Cập nhật địa chỉ trên các hợp đồng, chứng từ pháp lý": "Update legal document address",
+                "Thủ tục chuyển trường cho học sinh, sinh viên": "School transfer procedures",
+                "Cập nhật thông tin ngân hàng, tài khoản tài chính": "Update bank account information"
+            };
+            const mZh = {
+                "Đổi căn cước công dân/thẻ CCCD": "更换公民身份证",
+                "Đổi căn cước công dân/thẻ CCCD (địa chỉ thường trú)": "更换公民身份证",
+                "Cập nhật sổ hộ khẩu, xác nhận cư trú": "更新居住确认",
+                "Cập nhật xác nhận cư trú": "更新居住确认",
+                "Đổi giấy phép lái xe": "更换驾驶证",
+                "Đổi giấy phép lái xe (nơi cấp)": "更换驾驶证",
+                "Đổi giấy chứng nhận đăng ký kinh doanh": "更换营业执照",
+                "Đổi đăng ký kinh doanh": "更换营业执照",
+                "Đổi giấy chứng nhận quyền sử dụng đất": "更换土地使用权证",
+                "Đổi giấy chứng nhận quyền sử dụng đất (sổ đỏ/sổ hồng)": "更换土地使用权证",
+                "Đổi giấy chứng nhận QSDĐ": "更换土地使用证",
+                "Chuyển đổi mã số thuế": "更改税号",
+                "Chuyển đổi mã số thuế doanh nghiệp/cá nhân": "更改税号",
+                "Cập nhật bảo hiểm xã hội, bảo hiểm y tế": "更新社保/医保",
+                "Cập nhật BHXH, BHYT": "更新社保/医保",
+                "Cập nhật giấy tờ bảo hiểm xã hội, bảo hiểm y tế": "更新社保/医保",
+                "Đăng ký biển số xe": "登记车牌",
+                "Đăng ký biển số xe mới": "登记新车牌",
+                "Thủ tục hộ tịch": "户口手续",
+                "Thủ tục hộ tịch (khai sinh, khai tử, đăng ký kết hôn)": "户口手续",
+                "Cập nhật địa chỉ hợp đồng, chứng từ pháp lý": "更新法律文件上的地址",
+                "Cập nhật hợp đồng, chứng từ pháp lý": "更新法律文件上的地址",
+                "Cập nhật địa chỉ trên các hợp đồng, chứng từ pháp lý": "更新法律文件上的地址",
+                "Thủ tục chuyển trường cho học sinh, sinh viên": "转学手续",
+                "Cập nhật thông tin ngân hàng, tài khoản tài chính": "更新银行帐户信息"
+            };
+            return window.currentLang === 'en' ? (mEn[text] || text) : (mZh[text] || text);
+        }
         function normalizeStr(str) {
             return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
         }
@@ -258,54 +574,78 @@
         }
 
         function renderResult(data, query) {
-            const oldNames = data.old_units.map(u => u.name).join(' và ');
+            const trOldUnits = data.old_units.map(u => ({...u, trName: trGeo(u.name), trType: trType(u.type)}));
+            const conj = window.currentLang === 'en' ? ' and ' : (window.currentLang === 'zh' ? ' 和 ' : ' và ');
+            const oldNames = trOldUnits.map(u => u.trName).join(conj);
 
             // Check if query matched old name
             const isConfused = data.old_units.some(u => normalizeStr(u.name).includes(query));
 
-            document.getElementById('resTitle').innerText = data.new_name;
-            document.getElementById('resSubtitle').innerText = `${data.new_type} thuộc phân vùng ${data.region || ''}`;
+            document.getElementById('resTitle').innerText = trGeo(data.new_name);
+            const regionLabel = window.currentLang === 'en' ? 'in region ' : (window.currentLang === 'zh' ? '属于地区 ' : 'thuộc phân vùng ');
+            const trRegion = data.region ? regionLabel + trRegionName(data.region) : '';
+            document.getElementById('resSubtitle').innerText = `${trType(data.new_type)} ${trRegion}`;
 
             // Format dates
             let parts = data.effective_date.split('-');
             let fDate = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : data.effective_date;
             document.getElementById('resDate').innerText = fDate;
 
-            document.getElementById('resResolution').innerText = data.resolution;
-            document.getElementById('resSubResolution').innerText = data.sub_unit_resolution || '';
-            document.getElementById('resNewName').innerText = data.new_name;
+            document.getElementById('resResolution').innerText = trGeo(data.resolution);
+            document.getElementById('resSubResolution').innerText = data.sub_unit_resolution ? trGeo(data.sub_unit_resolution) : '';
+            document.getElementById('resNewName').innerText = trGeo(data.new_name);
+            
+            const trNewName = trGeo(data.new_name);
+            const trNewType = trType(data.new_type);
 
             // AEO Logic formulation
-            let aeoText = `Theo ${data.resolution}, các đơn vị ${oldNames} đã chính thức sáp nhập thành ${data.new_name} mang cấp độ ${data.new_type}. `;
-            if (isConfused) {
-                aeoText = ` (Trước đây gọi là ${oldNames}). ` + aeoText;
+            let aeoText = "";
+            const t = i18n[window.currentLang];
+            if (window.currentLang === 'en') {
+                aeoText = `According to ${trGeo(data.resolution)}, the units ${oldNames} have officially merged into ${trNewName} with level ${trNewType}. `;
+                if (isConfused) {
+                    aeoText = ` (Formerly called ${oldNames}). ` + aeoText;
+                }
+                aeoText += `This geographical boundary change officially takes effect on ${fDate}.`;
+            } else if (window.currentLang === 'zh') {
+                aeoText = `根据 ${trGeo(data.resolution)}，${oldNames} 单位已正式合并为级别为 ${trNewType} 的 ${trNewName}。`;
+                if (isConfused) {
+                    aeoText = ` (以前称为 ${oldNames})。` + aeoText;
+                }
+                aeoText += `此地理边界变更于 ${fDate} 正式生效。`;
+            } else {
+                aeoText = `Theo ${trGeo(data.resolution)}, các đơn vị ${oldNames} đã chính thức sáp nhập thành ${trNewName} mang cấp độ ${trNewType}. `;
+                if (isConfused) {
+                    aeoText = ` (Trước đây gọi là ${oldNames}). ` + aeoText;
+                }
+                aeoText += `Sự thay đổi về địa giới này chính thức có hiệu lực từ ngày ${fDate}.`;
             }
-            aeoText += `Sự thay đổi về địa giới này chính thức có hiệu lực từ ngày ${fDate}.`;
             document.getElementById('aeoOverview').innerText = aeoText;
 
             // Render Comparison Table
             const tbody = document.getElementById('comparisonTableBody');
-            let popNumber = data.population ? data.population.toLocaleString('vi-VN') : 'Đang cập nhật';
-            let sqNumber = data.area_km2 ? data.area_km2.toLocaleString('vi-VN') : 'Đang cập nhật';
+            const tl = i18n[window.currentLang];
+            let popNumber = data.population ? data.population.toLocaleString('vi-VN') : tl.tblUpdating;
+            let sqNumber = data.area_km2 ? data.area_km2.toLocaleString('vi-VN') : tl.tblUpdating;
 
             tbody.innerHTML = `
                 <tr class="border-b">
-                    <td class="p-3 text-sm text-slate-800 font-medium">Tên gọi / Phân cấp</td>
+                    <td class="p-3 text-sm text-slate-800 font-medium">${tl.tblNameLevel}</td>
                     <td class="p-3 text-sm text-slate-500">${oldNames}</td>
-                    <td class="p-3 text-sm text-slate-800 font-bold text-blue-600">${data.new_name} (${data.new_type})</td>
+                    <td class="p-3 text-sm text-slate-800 font-bold text-blue-600">${trNewName} (${trNewType})</td>
                 </tr>
                 <tr class="border-b">
-                    <td class="p-3 text-sm text-slate-800 font-medium">Diện tích (km2) / Dân số</td>
-                    <td class="p-3 text-sm text-slate-500">Phân mảnh địa giới</td>
-                    <td class="p-3 text-sm text-slate-800 font-bold">${sqNumber} km2 / ${popNumber} người</td>
+                    <td class="p-3 text-sm text-slate-800 font-medium">${tl.tblAreaPop}</td>
+                    <td class="p-3 text-sm text-slate-500">${tl.tblFrag}</td>
+                    <td class="p-3 text-sm text-slate-800 font-bold">${sqNumber} / ${popNumber} ${tl.tblPeople}</td>
                 </tr>
             `;
 
             // Render Old Units Model
             const oldContainer = document.getElementById('resOldUnits');
-            oldContainer.innerHTML = data.old_units.map(u => `
+            oldContainer.innerHTML = trOldUnits.map(u => `
                 <div class="bg-slate-50 border-2 border-dashed border-slate-200 p-4 rounded-xl text-center">
-                    <span class="text-sm font-bold text-slate-500">${u.name} (${u.type})</span>
+                    <span class="text-sm font-bold text-slate-500">${u.trName} (${u.trType})</span>
                 </div>
             `).join('');
 
@@ -313,21 +653,21 @@
             const impactContainer = document.getElementById('resImpacts');
             if (data.affected_procedures && Array.isArray(data.affected_procedures)) {
                 impactContainer.innerHTML = data.affected_procedures.map(imp => {
-                    let type = "Cập nhật tài liệu";
-                    if (imp.toLowerCase().includes("cccd") || imp.toLowerCase().includes("hộ chiếu")) type = "Định danh cá nhân";
-                    if (imp.toLowerCase().includes("sổ đỏ") || imp.toLowerCase().includes("đất")) type = "Tài sản / Đất đai";
-                    if (imp.toLowerCase().includes("kinh doanh") || imp.toLowerCase().includes("thuế")) type = "Kinh doanh / Thuế";
+                    let type = tl.lblUpdateDoc;
+                    if (imp.toLowerCase().includes("cccd") || imp.toLowerCase().includes("hộ chiếu")) type = tl.lblIdentity;
+                    if (imp.toLowerCase().includes("sổ đỏ") || imp.toLowerCase().includes("đất")) type = tl.lblProperty;
+                    if (imp.toLowerCase().includes("kinh doanh") || imp.toLowerCase().includes("thuế")) type = tl.lblBusiness;
 
                     return `
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between">
                         <div>
                             <span class="inline-block text-[10px] uppercase font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-sm mb-3">${type}</span>
-                            <p class="font-medium text-slate-800 text-sm leading-relaxed">${imp}</p>
+                            <p class="font-medium text-slate-800 text-sm leading-relaxed">${trProcedure(imp)}</p>
                         </div>
                     </div>
                 `}).join('');
             } else {
-                impactContainer.innerHTML = `<p class="col-span-full text-slate-500 italic text-sm">Chưa có thông tin danh mục thay đổi cụ thể.</p>`;
+                impactContainer.innerHTML = `<p class="col-span-full text-slate-500 italic text-sm">${tl.noImpact}</p>`;
             }
 
             // Render Sources
@@ -337,7 +677,7 @@
                 linksBlock.classList.remove('hidden');
                 linksCon.innerHTML = data.source_urls.map(url => `
                     <a href="${url}" target="_blank" class="text-xs text-blue-400 hover:text-white hover:underline flex items-center gap-1 font-medium truncate">
-                        <i data-lucide="link" class="w-3 h-3"></i> Nguồn tham chiếu
+                        <i data-lucide="link" class="w-3 h-3"></i> ${tl.linkSource}
                     </a>
                 `).join('');
             } else {
